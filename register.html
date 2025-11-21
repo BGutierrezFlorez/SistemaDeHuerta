@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - SistemaDeHuerta</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">SistemaDeHuerta</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="servicio.html">Servicios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="register.html"><i class="fas fa-user-circle"></i> Registrarse</a>
+                <span class="separator">|</span>
+                <a href="login.html"><img src="media/inicio-sesion.png" alt="Iniciar sesión" class="auth-icon"> Iniciar sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero eliminado: solo queda el formulario de registro (acceso) -->
+
+
+
+
+
+    <style>
+        :root{--card-bg:#ffffff;--accent:#1e7a2b;--muted:#6b6b6b}
+        body{
+            background-image: linear-gradient(rgba(11,58,7,0.55), rgba(14,90,16,0.55)),
+                url('media/apples-flowers-garden-hdr-wallpaper-preview.jpg'),
+                url('media/pngtree-thriving-garden-vibrant-vegetables-rich-fertile-soil-image_17077399.jpg'),
+                url('media/huerta 2.0 png.png');
+            background-size: cover, cover, cover, cover;
+            background-position: center 35%, center 35%, center, center;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+            color:#fff;font-family:'Outfit',system-ui,Arial,Helvetica,sans-serif}
+        .auth-wrapper{display:flex;justify-content:center;align-items:center;padding:48px 20px;min-height:60vh}
+        .auth-card{width:100%;max-width:560px;background:var(--card-bg);color:#0b3a07;border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,0.35);border:1px solid rgba(0,0,0,0.08)}
+        .brand-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+        .brand-logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#1e7a2b,#3fb04a);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+        .card-title{font-size:22px;margin:0 0 4px}
+        .card-sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+        .auth-card label{display:block;margin-top:8px;font-weight:600}
+        .input-row{position:relative;margin-top:6px}
+        .input-row input{width:100%;padding:12px 12px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+        .input-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#999;font-size:14px}
+        .auth-actions{display:flex;gap:12px;align-items:center;margin-top:16px}
+        .btn-contact{background:var(--accent);color:#fff;border:none;padding:10px 16px;border-radius:8px;cursor:pointer}
+        .auth-note{margin-top:12px;text-align:center;color:#666;font-size:13px}
+        #feedback{margin-left:8px}
+        @media(max-width:520px){.auth-card{padding:18px;margin:12px}}
+        .testimonials-section{background-color:transparent;padding:40px 20px}
+        .testimonials-container{background:transparent}
+        /* Small auth icon sizing so header image fits */
+        .auth-buttons .auth-icon{width:20px;height:20px;vertical-align:middle;margin-right:8px}
+        .auth-buttons a{color:inherit;text-decoration:none;margin-left:8px}
+    </style>
+
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="auth-wrapper">
+                <div class="auth-card">
+                    <div class="brand-row">
+                        <div class="brand-logo">SD</div>
+                        <div>
+                            <h2 class="card-title">Crear cuenta</h2>
+                            <div class="card-sub">Regístrate para acceder a asesorías y servicios personalizados</div>
+                        </div>
+                    </div>
+                    <form id="registerForm">
+                        <label for="name">Nombre</label>
+                        <div class="input-row"><input id="name" name="name" type="text" placeholder="Tu nombre" required><span class="input-icon"><i class="fas fa-user"></i></span></div>
+
+                        <label for="email">Correo electrónico</label>
+                        <div class="input-row"><input id="email" name="email" type="email" placeholder="tu@correo.com" required><span class="input-icon"><i class="fas fa-envelope"></i></span></div>
+
+                        <label for="password">Contraseña</label>
+                        <div class="input-row"><input id="password" name="password" type="password" placeholder="Contraseña" required><span class="input-icon"><i class="fas fa-lock"></i></span></div>
+
+                        <label for="confirm">Confirmar contraseña</label>
+                        <div class="input-row"><input id="confirm" name="confirm" type="password" placeholder="Confirmar contraseña" required><span class="input-icon"><i class="fas fa-lock"></i></span></div>
+
+                        <div class="auth-actions">
+                            <button type="submit" class="btn-contact">Crear cuenta</button>
+                            <div id="feedback"></div>
+                        </div>
+                    </form>
+                    <p class="auth-note">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        async function hashPassword(password){
+            const enc = new TextEncoder();
+            const buf = await crypto.subtle.digest('SHA-256', enc.encode(password));
+            return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', async function(e){
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('confirm').value;
+            const feedback = document.getElementById('feedback');
+
+            if(!name || !email || !password || !confirm){
+                feedback.style.color = '#ffcccb';
+                feedback.textContent = 'Por favor completa todos los campos.';
+                return;
+            }
+            if(password !== confirm){
+                feedback.style.color = '#ffcccb';
+                feedback.textContent = 'Las contraseñas no coinciden.';
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('sdh_users') || '{}');
+            if(users[email]){
+                feedback.style.color = '#ffcccb';
+                feedback.textContent = 'Ya existe una cuenta con ese correo.';
+                return;
+            }
+
+            const hash = await hashPassword(password);
+            users[email] = { name, hash };
+            localStorage.setItem('sdh_users', JSON.stringify(users));
+            localStorage.setItem('sdh_auth', email);
+
+            feedback.style.color = 'var(--primary-green)';
+            feedback.textContent = 'Cuenta creada. Redirigiendo...';
+            setTimeout(()=> window.location.href = 'index.html', 1000);
+        });
+    </script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
+            background-image: linear-gradient(rgba(11,58,7,0.55), rgba(14,90,16,0.55)), url('media/pngtree-thriving-garden-vibrant-vegetables-rich-fertile-soil-image_17077399.jpg'), url('media/huerta 2.0 png.png');

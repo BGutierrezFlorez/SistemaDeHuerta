@@ -141,4 +141,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 100);
     });
+
+        // 6. Autenticación simple (mostrar usuario y logout)
+        function updateAuthUI(){
+            const authEmail = localStorage.getItem('sdh_auth');
+            const users = JSON.parse(localStorage.getItem('sdh_users') || '{}');
+            const authButtonsList = document.querySelectorAll('.auth-buttons');
+
+            authButtonsList.forEach(container => {
+                if(authEmail && users[authEmail]){
+                    const name = users[authEmail].name || authEmail.split('@')[0];
+                    container.innerHTML = `
+                        <span style="margin-right:10px;color:var(--text-color);font-weight:700;">Hola, ${escapeHtml(name)}</span>
+                        <button id="logoutBtn" style="background:transparent;border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:6px;color:var(--text-color);cursor:pointer;">Cerrar sesión</button>
+                    `;
+                    const btn = container.querySelector('#logoutBtn');
+                    btn.addEventListener('click', () => {
+                        localStorage.removeItem('sdh_auth');
+                        // Opcional: redirigir a index
+                        window.location.href = 'index.html';
+                    });
+                } else {
+                    container.innerHTML = `
+                        <a href="register.html"><i class="fas fa-user-circle"></i> Registrarse</a>
+                        <span class="separator">|</span>
+                        <a href="login.html">Iniciar sesión</a>
+                    `;
+                }
+            });
+        }
+
+        // Pequeña función para escapar html en el nombre
+        function escapeHtml(str){
+            return String(str).replace(/[&<>"'`]/g, s => ({
+                '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;","`":"&#96;"
+            })[s]);
+        }
+
+        // Ejecutar al cargar
+        updateAuthUI();
 });
