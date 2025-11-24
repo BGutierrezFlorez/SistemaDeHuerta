@@ -8,8 +8,9 @@ namespace SistemaDeHuerta.Models
     public enum TipoUsuario
     {
         Administrador,
-        Empleado,
-        Cliente
+        Usuario,
+        Supervisor,
+        Invitado
     }
     public class usuario
     {
@@ -18,8 +19,6 @@ namespace SistemaDeHuerta.Models
         public TipoUsuario tipoUsuario { get; set; }
         public String cedula { get; set; }
         public String correo { get; set; }
-        public String contrasena { get; set; }
-        public int idCultivo { get; set; }
-        public int idComentario { get; set; }
+        public String contraseña { get; set; }
     }
 }

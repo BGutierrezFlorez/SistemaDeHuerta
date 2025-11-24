@@ -55,7 +55,7 @@ namespace SistemaDeHuerta
         {
             try
             {
-                strCadenaCnx = "Data Source=DESKTOP-7TP2P3K\\SQLEXPRESS;Initial Catalog =CowShop; Integrated Security = True";
+                strCadenaCnx = "Data Source=DESKTOP-4S4B81D\\SQLEXPRESS;Initial Catalog=AgroDB;Integrated Security=True";
                 objCnnBD = new SqlConnection(strCadenaCnx);
                 objCnnBD.Open();
                 blnBDAbierta = true;
