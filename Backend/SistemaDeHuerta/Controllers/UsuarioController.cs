@@ -71,5 +71,27 @@ namespace SistemaDeHuerta.Controllers
             }
         }
 
+        // POST api/usuario - Registrar un nuevo usuario
+        [HttpPost]
+        [Route("")]
+        public IHttpActionResult Post([FromBody] usuario nuevo)
+        {
+            if (nuevo == null)
+                return BadRequest("Cuerpo de petición vacío o inválido.");
+
+            try
+            {
+                bool creado = UsuarioData.RegistrarUsuario(nuevo);
+                if (creado)
+                    return Ok(new { success = true, mensaje = "Usuario registrado." });
+                else
+                    return BadRequest("No se pudo registrar el usuario.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error al registrar: " + ex.Message);
+            }
+        }
+
     }
 }
