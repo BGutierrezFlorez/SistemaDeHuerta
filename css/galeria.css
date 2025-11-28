@@ -505,12 +505,20 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #001a00;
+    background-color: #4caf50;
     color: var(--text-color);
     padding: 60px 20px 20px;
     border-top: 3px solid var(--primary-green);
 }
 
+.acercadenosotros{
+    font-size: 20px;
+    color: #ffc107; /* Azul (Bootstrap primary) */
+}
+.acercadenosotros:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el cursor */
+    cursor: default;
+}
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -893,4 +901,22 @@ body {
     .social-tooltip {
         display: none;
     }
+}
+.acercadenosotros{
+    font-size: 20px;
+    color: #81c9fa;
+}
+/* Hover azul para 'Acerca de nosotros' y enlaces a nosotros.html */
+.acercadenosotros:hover {
+    color: #007bff; /* Azul (Bootstrap primary) */
+    cursor: default;
+}
+
+/* Enlaces que apuntan a la página 'nosotros.html' — cambiar color al hover */
+a[href="nosotros.html"] {
+    transition: color 0.2s ease;
+}
+
+a[href="nosotros.html"]:hover {
+    color: #007bff;
 }
